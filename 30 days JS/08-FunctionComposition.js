@@ -7,6 +7,7 @@ The function composition of an empty list of functions is the identity function 
 
 You may assume each function in the array accepts one integer as input and returns one integer as output.
 
+            return compose(functions.slice(1))(functions[0](x));
 
 Example 1:
 
@@ -47,7 +48,13 @@ all functions accept and return a single integer
  * @return {Function}
  */
 var compose = function (functions) {
-	return function (x) {};
+	return function (x) {
+		if (functions.length === 0) {
+			return x;
+		} else {
+			//implement the rest of the cases
+		}
+	};
 };
 
 /**
