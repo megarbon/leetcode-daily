@@ -36,3 +36,20 @@ Constraints:
 0 <= calls.length <= 1000
 calls[i] is one of "increment", "decrement" and "reset"
 */
+var createCounter = function (init) {
+	let presentCount = init;
+
+	function increment() {
+		return ++presentCount;
+	}
+
+	function decrement() {
+		return --presentCount;
+	}
+
+	function reset() {
+		return (presentCount = init);
+	}
+
+	return { increment, decrement, reset };
+};
