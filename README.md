@@ -1,6 +1,6 @@
 # LeetCode Problem Solutions
 
-![LeetCode Logo]([https://your_image_link_here](https://coderssb.com/Resources/leetcode-logo.png))
+![LeetCode Logo](https://upload.wikimedia.org/wikipedia/commons/0/0a/LeetCode_Logo_black_with_text.svg)
 
 ## Overview
 This repository contains my solutions to various coding problems from LeetCode. LeetCode is a popular online platform for practicing coding skills and preparing for technical interviews. It offers a wide range of algorithm and data structure problems to help programmers enhance their problem-solving abilities.
