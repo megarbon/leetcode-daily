@@ -3,7 +3,32 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>01</title>
-		<script></script>
+		<script>
+			dibujarTablero = () => {
+				const TAM = 100;
+				let tablero = '';
+
+				for (let i = 0; i < 8; i++) {
+					tablero += `<div style="
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			">`;
+					for (let j = 0; j < 8; j++) {
+						(i + j) % 2 === 0
+							? (tablero += `<div style="height: ${TAM}px; width: ${TAM}px; border: 1px solid black;background-color: green;"> ${i},${j}</div>`)
+							: (tablero += `<div style="height: ${TAM}px; width: ${TAM}px; border: 1px solid black;background-color: cyan;"> ${i},${j}</div>`);
+					}
+					tablero += `</div>`;
+					tablero += `</br>`;
+				}
+
+				console.log(tablero);
+				document.write(tablero);
+			};
+		</script>
 	</head>
-	<body></body>
+	<body>
+		<button onclick="dibujarTablero()">Pulsa para dibuajar un tablero!</button>
+	</body>
 </html>

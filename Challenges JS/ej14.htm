@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Generador de tablero Ajedrez</title>
+	</head>
+	<style>
+		body {
+			display: flex;
+			justify-content: space-evenly;
+			align-items: center;
+			text-align: center;
+			flex-direction: column;
+			overflow: visible;
+		}
+
+		.row {
+			display: flex;
+		}
+
+		.square {
+			border: 1px solid black;
+			text-align: center;
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	</style>
+	<body>
+		<script>
+			function generarDivs() {
+				const tamanio = 100;
+				let divsHTML = ''; // Almacena el HTML de los divs
+
+				for (let i = 0; i < 8; i++) {
+					divsHTML += '<div class="row">';
+					for (let j = 0; j < 8; j++) {
+						const numeroCelda = i * 8 + j + 1;
+						const color =
+							(i + j) % 2 === 0 ? 'rgb(17, 118, 6)' : 'rgb(245, 255, 253)';
+						divsHTML += `<div class="square" style="background-color: ${color}; height: ${tamanio}px; width: ${tamanio}px">${numeroCelda}</div>`;
+					}
+					divsHTML += '</div>';
+					document.write('/br>');
+				}
+
+				document.body.innerHTML = divsHTML; // Reemplaza el contenido del body
+			}
+
+			// Llama a la función cuando se carga la página
+			generarDivs();
+		</script>
+	</body>
+</html>
