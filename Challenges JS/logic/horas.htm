@@ -1,0 +1,42 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>horas</title>
+		<script>
+			const countHours = (year, holidays) => {
+				const isLeapYear =
+					(year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+
+				const extraHours = holidays.reduce((totalHours, holiday) => {
+					const [month, day] = holiday.split('/');
+					const holidayDate = new Date(year, month - 1, day);
+
+					// Check if the holiday falls on a weekday (Monday to Friday)
+					if (holidayDate.getDay() >= 1 && holidayDate.getDay() <= 5) {
+						totalHours += 2;
+					}
+
+					return totalHours;
+				}, 0);
+
+				// Add an extra day if New Year's Eve is a weekday in a leap year
+				if (isLeapYear) {
+					const lastDayOfYear = new Date(year, 11, 31); // December 31
+					if (lastDayOfYear.getDay() >= 1 && lastDayOfYear.getDay() <= 5) {
+						extraHours += 2;
+					}
+				}
+
+				return extraHours;
+			};
+
+			const year = 2022;
+			const holidays = ['01/06', '04/01', '12/25'];
+
+			const result = countHours(year, holidays);
+			console.log(result); // Output: 4
+		</script>
+	</head>
+	<body></body>
+</html>
