@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Regalos</title>
+		<script>
+			const gifts = ['cat', 'game', 'socks'];
+			const wrappedGifts = [];
+			const wrapping = (gifts) => {
+				gifts.forEach((gift) => {
+					numAsteriscos = gift.length + 2;
+					asteriscos = '*'.repeat(numAsteriscos);
+					const wrappedGift = `${asteriscos}\n*${gift}*\n${asteriscos}`;
+					wrappedGifts.push(wrappedGift);
+				});
+				return wrappedGifts;
+			};
+			const wrapped = wrapping(gifts);
+			console.log(wrapped[0]);
+			console.log(wrapped[1]);
+			console.log(wrapped[2]);
+		</script>
+	</head>
+	<body></body>
+</html>

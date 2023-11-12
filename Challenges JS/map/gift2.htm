@@ -6,7 +6,7 @@
 		<script>
 			function wrapping(gifts) {
 				return gifts.map((gift) => {
-					const length = gift.length + 4;
+					const length = gift.length + 2;
 					const wrappingPaper = '*'.repeat(length);
 					const wrappedGift = `${wrappingPaper}\n*${gift.padStart(
 						gift.length + 2,

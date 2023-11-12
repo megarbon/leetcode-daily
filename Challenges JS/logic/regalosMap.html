@@ -1,0 +1,36 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>map</title>
+		<script>
+			const gifts = ['cat', 'game', 'socks'];
+			const wrappedGifts = [];
+			var mapPalabras = new Map();
+			const wrapping = (gifts) => {
+				gifts.forEach((gift) => {
+					numAsteriscos = gift.length + 2;
+					asteriscos = '*'.repeat(numAsteriscos);
+					const wrappedGift = `${asteriscos}\n*${gift}*\n${asteriscos}`;
+					mapPalabras.set(gift, wrappedGift);
+				});
+			};
+
+			wrapping(gifts);
+			console.log(mapPalabras);
+
+			let conjunto = new Set(gifts);
+			console.log(conjunto);
+			conjunto.delete('cat');
+			conjunto.add('carro de carreras');
+			conjunto.add('game', 'Pokemon');
+			conjunto.add('socks');
+
+			const otraVezArray = [...conjunto];
+			otraVezArray.push('socks');
+			console.log(otraVezArray);
+			console.log(conjunto.has('asdasd'));
+		</script>
+	</head>
+	<body></body>
+</html>
