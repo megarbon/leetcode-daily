@@ -42,3 +42,23 @@ Constraints:
 0 <= functions.length <= 1000
 all functions accept and return a single integer
 */
+
+/**
+ * @param {Function[]} functions
+ * @return {Function}
+ */
+var compose = function (functions) {
+	return function (x) {
+		return functions.reduceRight((accumulator, currentFunction) => {
+			return currentFunction(accumulator);
+		}, x);
+	};
+};
+
+const funcs1 = [(x) => x + 1, (x) => x * x, (x) => 2 * x];
+const funcs2 = [(x) => 10 * x, (x) => 10 * x, (x) => 10 * x];
+const funcs3 = [];
+
+console.log(compose(funcs1)(4));
+console.log(compose(funcs2)(1));
+console.log(compose(funcs3)(42));

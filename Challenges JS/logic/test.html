@@ -1,0 +1,25 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			var compose = function (functions) {
+				return function (x) {
+					return functions.reduceRight((accumulator, currentFunction) => {
+						return currentFunction(accumulator);
+					}, x);
+				};
+			};
+
+			const funcs1 = [(x) => x + 1, (x) => x * x, (x) => 2 * x];
+			const funcs2 = [(x) => 10 * x, (x) => 10 * x, (x) => 10 * x];
+			const funcs3 = [];
+
+			console.log(compose(funcs1)(4));
+			console.log(compose(funcs2)(1));
+			console.log(compose(funcs3)(42));
+		</script>
+	</head>
+	<body></body>
+</html>
