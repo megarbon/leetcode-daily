@@ -1,0 +1,62 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>02</title>
+    <script>
+      class Vehicle {
+        constructor(brand, model) {
+          this.brand = brand;
+          this.model = model;
+        }
+        move() {
+          console.log(`The Vehicle ${this.brand} ${this.model} is moving...`);
+        }
+
+        stop() {
+          console.log(`The Vehicle ${this.brand} ${this.model} is moving...`);
+        }
+      }
+
+      class Car extends Vehicle {
+        constructor(HP, seats, brand, model) {
+          super(brand, model);
+          this.HP = HP;
+          this.seats = seats;
+        }
+        maxSpeed() {
+          console.log(`Max Speed: ${this.HP * 1.5}`);
+        }
+      }
+
+      class Bike extends Vehicle {
+        constructor(type, brand, model) {
+          super(brand, model);
+          this.type = type;
+        }
+      }
+
+      class formulaOne extends Car {
+        constructor(brand, model, HP, seats, driver) {
+          super(HP, seats, brand, model);
+          this.driver = driver;
+        }
+        getDriverName() {
+          console.log(`Driver: ${this.driver}`);
+        }
+      }
+
+      v = new Vehicle("fiat", "500");
+      v.move();
+      v.stop();
+      c = new Car(350, "5", "Mercedes", "Clase G");
+      c.move(); //llamada a un metodo de la superclase
+      c.maxSpeed(); //llamada a un metodo de la clase propia
+      f1 = new formulaOne("Ferrari", "F1", 600, 1, "Thommas Vettel");
+      f1.maxSpeed();
+      f1.move();
+      f1.getDriverName();
+    </script>
+  </head>
+  <body></body>
+</html>
