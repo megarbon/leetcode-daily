@@ -80,3 +80,4 @@ var cancellable = function (fn, args, t) {
 };
 
 console.log(cancellable(fn, args, t));
+a;
