@@ -4,21 +4,22 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<script>
-			var compose = function (functions) {
-				return function (x) {
-					return functions.reduceRight((accumulator, currentFunction) => {
-						return currentFunction(accumulator);
-					}, x);
-				};
+			const args = [2],
+				t = 60,
+				cancelT = 50;
+			const fn = (x) => x * 5;
+			const result = [];
+
+			var cancellable = function (fn, args, t) {
+				if (t < cancelT) {
+					return fn(...args);
+				} else {
+					//cancel the call of the function
+					return false;
+				}
 			};
 
-			const funcs1 = [(x) => x + 1, (x) => x * x, (x) => 2 * x];
-			const funcs2 = [(x) => 10 * x, (x) => 10 * x, (x) => 10 * x];
-			const funcs3 = [];
-
-			console.log(compose(funcs1)(4));
-			console.log(compose(funcs2)(1));
-			console.log(compose(funcs3)(42));
+			console.log(cancellable(fn, args, t));
 		</script>
 	</head>
 	<body></body>
