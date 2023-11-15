@@ -76,6 +76,7 @@ var cancellable = function (fn, args, t) {
 	// When/if we call the function, it will return cancelFn,
 	// and since the return line calls (and consequentially executes)
 	// cancelFn, timeout will be cancelled, thereby cancelling fn execution.
+
 	return cancelFn;
 };
 
