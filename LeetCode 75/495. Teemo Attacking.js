@@ -31,3 +31,16 @@ Constraints:
 0 <= timeSeries[i], duration <= 107
 timeSeries is sorted in non-decreasing order.
 */
+
+/**
+ * @param {number[]} timeSeries
+ * @param {number} duration
+ * @return {number}
+ */
+var findPoisonedDuration = function (timeSeries, duration) {
+	if (timeSeries.length === 0) return 0;
+	let sum = duration;
+    for (let index = 0; index < timeSeries.length; index++) {
+        if(timeSeries[i-])
+    }
+};
