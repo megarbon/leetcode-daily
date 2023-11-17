@@ -32,20 +32,13 @@ Constraints:
 timeSeries is sorted in non-decreasing order.
 */
 
-/**
- * @param {number[]} timeSeries
- * @param {number} duration
- * @return {number}
- */
-var findPoisonedDuration = function (timeSeries, duration) {
-	if (timeSeries.length === 0) return 0;
-	let sum = duration;
-	for (let index = 0; index < timeSeries.length - 1; index++) {
-		if (timeSeries[index + 1] - timeSeries[index] < duration) {
-			sum += timeSeries[index + 1] - timeSeries[index];
-		} else {
-			sum += duration;
-		}
-	}
-	return sum;
+function findPoisonedDuration(timeSeries: number[], duration: number): number {
+    let totalTime = 0;
+    for(let i = timeSeries.length -1; i >=0; i--) {
+        if(timeSeries[i] - timeSeries[i-1] < duration) { 
+            totalTime -= duration -(timeSeries[i] - timeSeries[i-1]);
+        } 
+        totalTime += duration;
+    }
+    return totalTime;
 };
